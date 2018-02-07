@@ -9,3 +9,15 @@ body {
 h5 {
     font-size: 20px!important;
 }
+
+.clickable {
+    cursor: pointer;
+}
+
+.container {
+    width: 90%;
+}
+
+.list {
+    margin-top: 10px;
+}
