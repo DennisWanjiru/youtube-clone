@@ -15,7 +15,7 @@ class SearchBar extends Component {
                     <input type="search"
                     value = { this.state.term }
                     onChange = { e => this.setState({term: e.target.value }) }
-                     required />
+                    required />
                     <label className="label-icon"><i className="material-icons black-text">search</i></label>
                     <i className="material-icons">close</i>
                     </div>
