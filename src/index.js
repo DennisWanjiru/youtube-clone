@@ -7,6 +7,7 @@ import 'materialize-css/dist/css/materialize.min.css';
 import 'jquery/dist/jquery.min.js';
 import 'materialize-css/dist/js/materialize.min.js';
 import './app.css';
+import VideoDetail from './components/VideoDetail';
 
 const API_KEY = 'AIzaSyDKj9H03tZWKm2crzpWb29ZVKy5vOeZ_HA'
 
@@ -29,6 +30,7 @@ class App extends Component {
                 </div>
 
                 <div className="container content">
+                    <VideoDetail video={this.state.videos[0]} />
                     <VideoList videos = { this.state.videos } />
                 </div>
             </div>
