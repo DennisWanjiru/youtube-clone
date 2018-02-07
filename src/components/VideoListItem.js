@@ -1,10 +1,10 @@
 import React from 'react'
 
-const VideoListItem = ({video}) => {
+const VideoListItem = ({ video, onVideoSelect }) => {
     const imageUrl = video.snippet.thumbnails.medium.url
 
     return (
-        <div className="row">
+        <div onClick = { () => onVideoSelect(video) } className="row">
             <div className="col m4 s12">
                 <img src = { imageUrl } alt={ video.snippet.title } className="responsive-img" />
             </div>
