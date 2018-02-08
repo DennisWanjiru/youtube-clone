@@ -1,3 +1,4 @@
+import _ from 'lodash'
 import React , { Component } from 'react'
 import ReactDom from 'react-dom'
 import YTSearch from 'youtube-api-search'
@@ -6,8 +7,8 @@ import VideoList from './components/VideoList';
 import 'materialize-css/dist/css/materialize.min.css';
 import 'jquery/dist/jquery.min.js';
 import 'materialize-css/dist/js/materialize.min.js';
-import './app.css';
 import VideoDetail from './components/VideoDetail';
+import './app.css';
 
 const API_KEY = 'AIzaSyDKj9H03tZWKm2crzpWb29ZVKy5vOeZ_HA'
 
@@ -28,10 +29,12 @@ class App extends Component {
     }
 
     render() {
+        const videoSearch =  _.debounce(term => { this.videoSearch(term) }, 400)
+
         return (
             <div className="row">
                 <div className="navbar-fixed">
-                    <SearchBar onSearchTermChange = { term => this.videoSearch(term) } />
+                    <SearchBar onSearchTermChange = { videoSearch } />
                 </div>
 
                 <div className="container content">
